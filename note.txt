@@ -1,0 +1,17 @@
+data science :
+              Data Science is the process of using data (information) to find answers and make better decisions.
+
+               It combines:
+              Mathematics & Statistics → to understand numbers.
+              Programming (Python, R, SQL, etc.) → to work with data.
+             Business/Domain knowledge → to solve real-world problems.
+                 example: recomentation,self driving car 
+                 Collect raw data (from websites, apps, sensors, etc.)
+                 Clean and organize it.
+                 Analyze it with algorithms and models.
+                 Find patterns, trends, and predictions.   
+
+data analytic:
+
+
+
