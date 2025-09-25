@@ -48,3 +48,10 @@
 # #string to list
 # a ="antony"
 # print (list(a))
+
+
+#########################################
+# a=['antony','john','sony']
+# b=['pyhon','cyber']
+# print(dict(zip(a,b)))
+# print(list(zip(a,b)))
