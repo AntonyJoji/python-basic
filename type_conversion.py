@@ -33,18 +33,18 @@
 
 # ######################################
 
-ls =[1,2,3,4,5]
-print(ls)
-print(type(ls)) 
-print(set(ls))
-print(tuple(ls))
+# ls =[1,2,3,4,5]
+# print(ls)
+# print(type(ls)) 
+# print(set(ls))
+# print(tuple(ls))
 
 
 
-ls =[[1,2],[3,4]]
-print (dict(ls))
+# ls =[[1,2],[3,4]]
+# print (dict(ls))
 
-#######################################
-#string to list
-a ="antony"
-print (list(a))
+# #######################################
+# #string to list
+# a ="antony"
+# print (list(a))
