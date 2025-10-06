@@ -33,7 +33,7 @@
 # "# output: python is very powerfull"
 # "powerful programming"
 # #replace python with java
-# wxtract only programming from text1
+# extract only programming from text1
 # join the first word of text1 and last word of text2  -> python powerfull
 # is very powerful
 # reverse only the first word of text1 -> nohtyp programming
@@ -43,6 +43,7 @@
 
 # text1 = "python is very powerfull"
 # text2 = "powerful programming"
+# print(text1[:7] + text2)
 # print(text1.replace("python", "java"))
 # print(text2.split()[1])
 
@@ -53,6 +54,15 @@
 # print(text1.replace(" ", "") + text2.replace(" ", ""))
 # result = text1.split()[0] + text2.split()[1] + "".join(text1.split()[1:])
 # print(result)
+## question 4
+# val="the place is ekm"
+# words=val.split()
+# print(words)
+# words[0]=words[0].capitalize()
+# words[-1]=words[-1].capitalize()
+# result=" ".join(words)
+# print(result)
+
 
 
 
