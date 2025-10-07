@@ -115,3 +115,79 @@
 # print(list((1,2,3,4)))# it will convert the tuple to list
 # print(list({1,2,3,4}))# it will convert the set to list
 # print(list({1:2,2:3,3:4,4:5}))# it will convert the dictionary to list (only keys)
+
+# b=['python','java']
+# a=b # both a and b are pointing to same memory location
+# a.append(100)
+# print(a)
+# print(b)
+
+
+## to create a copy of a list ##
+
+# b=['python','java']
+# a=b.copy() # it will create a copy of the list
+# a.append(100)
+# print(a)
+# print(b)
+
+### to count the occurrences of an element in a list ###
+# a=['black','white','red','green','blue','red']
+# print(a.count('black'))# it will count the number of occurrences of the element in the list
+# print(a.count('red'))# it will count the number of occurrences of the element in the list
+
+
+###########concatination of two lists##########
+# a=[1,2,3]
+# b=[4,5,6]
+# c=a+b
+# print(c)
+
+# a=['red','green','blue']
+# b=['yellow','white','black']
+# c=a+b
+# print(c)
+
+
+###index of an element in a list###
+# a=['red','green','blue','yellow','white','black']
+# print(a.index('blue'))# it will return the index of the first occurrence of the element
+# print(a.index('white',2))# it will return the index of the first occurrence of the element from index 2
+# print(a.index('black',2,4))# it will return the index of the first occurrence of the element from index 2 to 5
+
+
+
+###################tuple##########################
+# tup=(1,'hello',3.5,True,[10,20,30],{1,2,3},{'name':'john','age':25})#tuple can store different data types,
+# print(tup)
+# print(tup[0])# first element
+# print(tup[1])# second element
+
+# print(min(tup))# it will give error because tuple contains different data types
+# print(max(tup))# it will give error because tuple contains different data types
+# print(len(tup))# length of the tuple
+# print(sorted(tup))# it will give error because tuple contains different data types
+
+# a=(10,20,30)
+# val1,val2,val3=a#unpacking of tuple
+# print(val1)
+# print(val2)
+# print(val3)
+
+# a=(10,20,30)
+# b=('hello','world')
+# print(a+b)
+# print(a*2)
+
+# a=('black','white','red','green','blue','red')
+# print(a.count('red'))# it will count the number of occurrences of the element in the tuple  
+# print(a.index('blue'))# it will return the index of the first occurrence of the element
+# print(a.index('blue',2))# it will return the index of the first occurrence of the element from index 2
+# print(a.index('white',2,5))# it will return the index of the first occurrence of the element from index 2 to 5
+
+
+###################set##########################
+se=set()#empty set
+print(type(se))
+se={1,'hello',3.5,True,(1,2,3),frozenset({1,2,3}),('name','john'),('age',25)}#set can store different data types but not list and dictionary
+print(se)
