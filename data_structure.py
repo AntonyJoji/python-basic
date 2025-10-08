@@ -15,7 +15,7 @@
 
 
 ###################list##########################
-# ls=[1,'hello',3.5,True,[10,20,30],(1,2,3),{1,2,3},{'name':'john','age':25}]#list can store different data types
+# ls=[1,'hello',3.5,True,[10,20,30],(1,2,3),{1,2,3},{'name':'john','age':25}]#list can store different data types,mutable elements like list and set can be stored in list
 # print(ls)
 # print(ls[0])# first element
 # print(ls[1])# second element
@@ -37,9 +37,9 @@
 
 
 # list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# list1.reverse() #inplace operation builtin function
+#list1.reverse() #inplace operation builtin function
 # print(list1)
-# print(len(list1))# length of the list
+#print(len(list1))# length of the list
 # print(min(list1))# minimum element in the list # must be of same data type
 # print(max(list1))# maximum element in the list # must be of same data type
 # print(sum(list1))# sum of all elements in the list # must be of same data type
@@ -158,7 +158,7 @@
 
 
 ###################tuple##########################
-# tup=(1,'hello',3.5,True,[10,20,30],{1,2,3},{'name':'john','age':25})#tuple can store different data types,
+# tup=(1,'hello',3.5,True,[10,20,30],{1,2,3},{'name':'john','age':25})#tuple can store different data types,immutable elements like list and set can be stored in tuple
 # print(tup)
 # print(tup[0])# first element
 # print(tup[1])# second element
@@ -187,7 +187,93 @@
 
 
 ###################set##########################
-se=set()#empty set
-print(type(se))
-se={1,'hello',3.5,True,(1,2,3),frozenset({1,2,3}),('name','john'),('age',25)}#set can store different data types but not list and dictionary
-print(se)
+# se=set()#empty set, unordered collection of unique elements,immutable,duplicate elements are not allowed
+# print(type(se))
+# se={1,'hello',3.5,True,(1,2,3),frozenset({1,2,3}),('name','john'),('age',25)}#set can store different data types but not list and dictionary
+# print(se)
+
+
+##set operations##
+# se={1,2,3,4,5}
+# print(se)
+# se.add(6)# it will add the element to the set
+# se.add('hello')# it will add the element to the set
+# print(se)
+
+# se = frozenset(se)# it will convert the set to frozenset (immutable set)
+# print(se)
+
+# se={1,2,3,4,5}
+# se.update([6,7,8,'hello',(1,2,3)])# update the set with the elements of the list
+# print(se)
+
+# se ={1,2,3,4,5}
+# new = se.copy()# it will create a copy of the set
+# print(id(se))
+# print(id(new))
+
+
+# se1={1,2,3}
+# se2={3,4,5,'python','java'}
+# print("union of two sets")
+# new=se1.union(se2)# it will return the union of two sets
+# print(new)
+# print(se1|se2)# it will return the union of two sets
+
+# print("intersection of two sets")
+# new2=se1.intersection(se2)# it will return the intersection of two sets
+# print(new2)
+
+# print("difference of two sets")
+# print(se1-se2)# it will return the difference of two sets
+# print(se2.difference(se1))# it will return the difference of two sets
+# print("symmetric difference of two sets")
+# print(se1.symmetric_difference(se2))# it will return the symmetric difference of two sets
+
+# print("to clear a set")
+# print(se1.clear())# it will remove all elements from the set
+# print(se1)
+
+# print("subset and superset")
+# se1={1,2,3}
+# se2={1,2,3,4,5}
+# print(se1.issubset(se2))# it will return True if se1 is subset of se2 else False
+# print(se2.issuperset(se1))# it will return True if se2 is
+# print(se2.issuperset(se1))# it will return True if se2 is superset of se1 else False
+
+# se1={1,2,3,4,5}
+# se1.remove(3)# it will remove the element from the set, if the element is not present it will raise an error
+# print(se1)
+# se1.pop()# it will remove a random element from the set
+# print(se1)
+# se1.discard(10)# it will remove the element from the set, if the element is not present it will not raise an error
+# print(se1)
+
+
+###################dictionary##########################
+
+# d={} # empty dictionary, unordered collection of key value pairs,key should be unique,mutable
+# print(type(d))# empty dictionary, unordered collection of key value pairs,key should be unique,mutable
+
+# d={1:2,1.2:5,'a':'apple',(1,2):'hello',frozenset({1,2}):'world',True:200}#dictionary can store different data types but not list and set as key
+# print(d[True])# accessing value by key'])
+
+# val={'name':'john','age':25,'city':'new york','is_student':True,'marks':[90,80,85],'address':{'street':'5th avenue','zip':10001}}#nested dictionary
+# print(val['address']['street'])# accessing value by key
+
+# val={1:{1:2,2:{10:"hello",20:{1:100,2:200}}}}
+# print(val[1][2][10])# accessing value by key
+# print(val[1][2][20][1])# accessing value by key
+
+
+# d={1:2,2:{1,2,3,4},3:'hello','a':100}
+# print(d['a'])# accessing value by key
+# print(d.get('b','key not found'))# it will return the value of the key if the key is present else it will return 'key not found'
+
+# ls =[('developer','python'),('manager','java'),('analyst','javascript')]
+# print(dict(ls))# it will convert the list of tuples to dictionary
+
+# ls =['apple','banana','orange']
+# ls2=['red','yellow','orange']
+# new=zip(ls,ls2)
+# print(dict(new))# it will convert the list of tuples to dictionary
