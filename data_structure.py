@@ -1,3 +1,6 @@
+# what is data structure?
+# A data structure is a way of organizing and storing data so that it can be accessed and modified efficiently.
+
 # building data structures in python
 # list
 # tuple
@@ -228,7 +231,7 @@
 # print(se1-se2)# it will return the difference of two sets
 # print(se2.difference(se1))# it will return the difference of two sets
 # print("symmetric difference of two sets")
-# print(se1.symmetric_difference(se2))# it will return the symmetric difference of two sets
+# print(se1.symmetric_difference(se2))# it will return the symmetric difference of two sets, elements present in either set but not in both
 
 # print("to clear a set")
 # print(se1.clear())# it will remove all elements from the set
@@ -277,3 +280,67 @@
 # ls2=['red','yellow','orange']
 # new=zip(ls,ls2)
 # print(dict(new))# it will convert the list of tuples to dictionary
+
+
+# d={1:2,2:3,3:'hello','a':100}
+# d[2]=200# it will update the value of the key if the key is present else it will add the key value pair to the dictionary
+# print(d)
+
+
+# ds={}
+# ds.setdefault('update',123)
+# print(ds)# it will add the key to the dictionary if the key is not present else it will return the
+
+# ds ={1:2,2:3,3:'hello','a':100}
+# val={'name':'john','age':25,'city':'new york','is_student':True,'marks':[90,80,85],'address':{'street':'5th avenue','zip':10001}}
+# ds.update(val)# it will update the dictionary with the key value pairs of another dictionary
+# print(ds)
+
+# ds={1:2,2:3}
+# ds.update({3:'hello','a':100})# it will update the dictionary with the key value pairs of another dictionary
+# ds.update(a=10,b=20)
+# print(ds)
+
+
+# ds ={1:2,2:3,3:'hello','a':100}
+# ds.pop(3)
+# print(ds)# it will remove the key value pair from the dictionary and return the value of the key
+
+# ds={1:2,2:3,3:'hello','a':100}
+# ds.popitem()# it will remove the last key value pair from the dictionary and return the key value pair
+# print(ds)
+
+
+# ds={1:2,2:3,3:'hello','a':100}
+# ds.clear()# it will remove all key value pairs from the dictionary
+# print(ds)
+
+
+# ds={1:2,2:3,3:'hello','a':100}
+# del ds[2]# it will remove the key value pair from the dictionary
+# print(ds)
+
+
+# ds={1:'python',2:'java',3:'javascript',4:'c++'}
+# print('python' in ds) # it will check if the key is present in the dictionary
+# print(1 in ds) # it will check if the key is present in the dictionary
+# print(5 in ds) # it will check if the key is present in the dictionary
+
+
+# ds={1:'python',2:'java',3:'javascript',4:'c++'}
+# new=ds.copy()# it will create a copy of the dictionary
+# print(id(ds))
+# print(id(new))
+
+
+# ds={1:'python',2:'java',3:'javascript',4:'c++'}
+# print(ds.keys())# it will return the keys of the dictionary
+# print(ds.values())# it will return the values of the dictionary
+# print(ds.items())# it will return the key value pairs of the dictionary as a list of tuples
+
+# ls=[1,2,3,4,5]
+# new=[]
+# for i in ls:
+#     new.append(i+10)
+# print(new)
+    
