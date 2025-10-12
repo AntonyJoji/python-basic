@@ -29,7 +29,7 @@
 # print(ls[1:4])# slicing
 # print(ls[1:])# slicing from index 1 to end
 
-#ls =[1,2,3,4,5,6,7,8,9,10]
+# ls =[1,2,3,4,5,6,7,8,9,10]
 # print(ls)
 # print("odd elements using slicing")
 # print(ls[::2])  # slicing #start:stop:step#2stepsize
@@ -37,6 +37,11 @@
 # print(ls[1::2])
 # print("reverse the list")
 # print(ls[::-1])
+
+# ls=['python','java','c++','javascript','html','css']
+# print(ls)
+# print(ls[2:5:2])
+
 
 
 # list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
