@@ -89,12 +89,12 @@
 #     print()
 
 
-ds={'a':10,'b':20,'c':30}
-for i in ds:
-    print(i,ds[i])
-for i in ds.values():
-    print(i)
-for i in ds.keys():
-    print(i)    
-for i,j in ds.items():
-    print(i,j)
+# ds={'a':10,'b':20,'c':30}
+# for i in ds:
+#     print(i,ds[i])
+# for i in ds.values():
+#     print(i)
+# for i in ds.keys():
+#     print(i)    
+# for i,j in ds.items():
+#     print(i,j)
