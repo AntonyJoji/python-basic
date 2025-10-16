@@ -45,26 +45,79 @@
 #     print("sorry")
 
 
-coursework = "English"
-score_theory = 53
-score_practical = 35
+# coursework = "English"
+# score_theory = 53
+# score_practical = 35
 
-if coursework == "Science" or coursework == "science":
-    if score_theory > 50:
-        print("Please check the input score for 'Science: Theory'.")
-    elif score_practical > 50:
-        print("Please check the input score for 'Science: Practical'.")
-    else:
-        print("Score validated for Science. Your total is:", score_theory + score_practical)
+# if coursework == "Science" or coursework == "science":
+#     if score_theory > 50:
+#         print("Please check the input score for 'Science: Theory'.")
+#     elif score_practical > 50:
+#         print("Please check the input score for 'Science: Practical'.")
+#     else:
+#         print("Score validated for Science. Your total is:", score_theory + score_practical)
 
-elif coursework == "English" or coursework == "english":
-    if score_theory > 60:
-        print("Please check the input score for 'English: Theory'.")
-    elif score_practical > 40:
-        print("Please check the input score for 'English: Practical'.")
-    else:
-        print("Score validated for English. Your total is:", score_theory + score_practical)
+# elif coursework == "English" or coursework == "english":
+#     if score_theory > 60:
+#         print("Please check the input score for 'English: Theory'.")
+#     elif score_practical > 40:
+#         print("Please check the input score for 'English: Practical'.")
+#     else:
+#         print("Score validated for English. Your total is:", score_theory + score_practical)
 
-else:
-    print("Coursework not recognised. please enter score for either science or english.")
+# else:
+#     print("Coursework not recognised. please enter score for either science or english.")
+
+
+###################################################
+ 
+# ls=[11,2,'anto','python',100,200]
+# for i in ls:
+#     if i=="python":
+#         print(i)
+#         break
+#     print (i)
+# print('done!')
+
+# ls=[11,2,'anto','python',100,200]
+# for i in ls:
+#     if i=="python":
+#         print(i)
+#         continue
+#     print (i)
+# print('done!')
+
+
+
+# ls=[11,2,'anto','python',100,200]
+# for i in ls:
+#     if i=="python":
+#         print(i)
+#     else:
+#         print(i)
+# print('done')
+
+
+# i=0
+# while i<=10:
+#     if i == 5:
+#         print(i)
+#         break
+#     print(i)
+#     i=i+1
+#     print ("done")
+
+
+######################################
+
+# ls =[1,2,3,[40,50,60,70],'python']
+# for i in ls:
+#     if type(i)==type([]):
+#         for j in i:
+#             if j==50:
+#                 break
+#             print(j)
+#     else: 
+#          print(i)        
+
 

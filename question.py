@@ -64,8 +64,42 @@
 # print(result)
 
 
+# question 4
 
+# sub =['i','you']
+# ver =['play','love']
+# obj =['hokey','football']
+# i play hocky
+# i play foot ball
+# i love hocky
+# i love football
+# you play hocky
+# you play football
+# you love hocky
+# you love football
 
+# sub = ['i', 'you']
+# ver = ['play', 'love']
+# obj = ['hockey', 'football']
+
+# for s in sub:
+#     for v in ver:
+#         for o in obj:
+#             print (s,v,o)
+
+# question 5:
+# with the give list [12,24,35,24,88,120,155,88,120,155]
+# write a program to print this list after removing all
+# duplicate value with orginal oder reserved
+
+# list1 = [12, 24, 35, 24, 88, 120, 155, 88, 120, 155]
+# new_list = []
+
+# for i in list1:
+#     if i not in new_list:# not in is used to check the item in the list
+#         new_list.append(i)
+
+# print(new_list)
 
 
 
