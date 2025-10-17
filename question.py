@@ -101,6 +101,73 @@
 
 # print(new_list)
 
+# question 6
+# write a program that accepts a sentence and calculate 
+# the number of upper and lower case letter 
+# suppose the following iinput is supplied to the program:
+# "hello world"
+# then the output should be 
+# upper case 1
+# lower case 9
+
+# a=input("enter the string:")
+# upper = 0
+# lower = 0
+# for b in a:
+#     if b.isupper():
+#         upper=upper+1
+#     elif b.islower():
+#      lower=lower+1
+# print (upper)
+# print (lower)     
+# 
+
+# val= input ("enter the string:")
+# res ={"upper":0,"lower":0}  
+# for i in val:
+#     if i.isupper():
+#         res['upper']+=1
+#     elif i.islower():
+#         res['lower']+=1     
+# print (res)       
+# 
+# 
+# ###########################
+# 
+# question7
+# 
+# 
+# string = "a citizen of ekm fought and won the election"
+# stop_words =["in","of","a","and","the" ]
+# " citizen ekm fought won election"
+# string = "a citizen of ekm fought and won the election"
+# stop_word =["in","of","a","and","the"]
+# wor=string.split()
+# print (wor)
+# ls=[]
+# for i in wor:
+#     if i not in stop_word:
+#         ls.append(i)
+# print (' '.join(ls) )
+
+#question 8
+#the number must be divisible 5
+#write a program to display only those number from a list that satisfy the fllowing condition
+# if the number is greater than 150 ,then skip it and move to the next number
+#if the number is greater than 500 then stop  the loop
+
+#number =[12,75,150,180,145,525,50]
+
+
+# number =[12,75,150,180,145,525,50]
+
+# for a in number:
+#     if a>500:
+#         break
+#     elif a>150:
+#         continue
+#     elif a%5==0:
+#         print(a)
 
 
 
