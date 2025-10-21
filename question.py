@@ -171,4 +171,67 @@
 
 
 
+########################
+
+#['x','xx','xxx','xxxx']
+
+#{1:'x',2:'xx',3:'xxx',4:'xxxx',5:'xxxxx'}
+
+# my_list=[]
+# for i in range(1,6):
+#     my_list.append(i*'x')
+# print (my_list)
+
+###############################
+
+# my_list={}
+# for i in range (1,6):
+#     my_list[i]=('x'*i)
+# print(my_list)
+
+#######################
+
+#1
+#1,2
+#1,2,3
+#1,2,3,4
+#1,2,3,4,5
+
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(j,end=' ')
+#     print()    
+
+#######################################
+## to find the element fromo the list##########
+
+# number=[4,2,7,1,8,3,6]
+# n=int(input("enter the number to be find:"))
+# for i in range(len(number)):
+#     if number[i]==n:
+#         print ("the number is fount:",n)
+#         print ("the poposition:",i)
+#         break
+# else:
+#     print("item not fount")
+##################or############################
+
+# number=[4,2,7,1,8,3,6]
+# n=int(input("enter the number to be find:"))
+# f=0
+# for i in range(len(number)):
+#     if number[i]==n:
+#         print ("the number is fount:",n)
+#         print ("the poposition:",i)
+#         f=1
+#         break
+# if f==0:
+#     print("item not fount")
+
+
+    
+   
+
+
+ 
 
