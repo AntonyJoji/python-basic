@@ -107,3 +107,99 @@ def squr_ls(val):
 
 
     
+# def samp(a,b,c):# possitional argument passing
+#     print(a)
+#     print(b)
+#     print(c)
+
+# samp(1,2,3)
+
+# def samp(a,b=0,c=0):# #default argument passing
+#     print(a)
+#     print(b)
+#     print(c)
+
+# samp(1,2,3)
+
+# def samp(a,b):#keyword argument passing
+#     print(a-b)
+
+# samp(b=4,a=2)
+
+# def samp(*a):#arbitary argument
+#     print(a)
+#     for i in a:
+#         print(i)
+
+# samp(1,2,3,4)
+
+# def samp(**a):#keyword arbitary argument
+#     print(a)
+#     for i in a.values():
+#         print(i)
+
+# samp(a=1,b=2,c=3)
+# samp()
+
+####################################
+#factorial of a number
+
+# def factorial(n):
+#     if n < 0:
+#         return "nope"
+#     elif n == 0 or n == 1:
+#         return 1
+#     else:
+#         return n * factorial(n-1)
+    
+# num = int(input("enter the number:"))
+# res = factorial(num)
+# print(res)
+
+##write a function second_largest (nums) that return the second largest element in a list
+
+
+
+# def second_largest(nums):
+#     unique_nums = list(set(nums))      # Remove duplicates
+#     unique_nums.sort(reverse=True)     # Sort in descending order
+#     return unique_nums[1]              # Return second largest
+
+# # Get list input from user
+# n = int(input("Enter how many numbers: "))
+# nums = []
+
+# for i in range(n):
+#     val = int(input(f"Enter number {i+1}: "))
+#     nums.append(val)
+
+# print("List:", nums)
+# print("Second largest number:", second_largest(nums))
+
+#####################################################################
+#write a function count_frequency(ist)that return a dictionary of each element
+
+#ls =['a','b','a','c','b','a']
+
+# def coun_freq(lst):
+#     freq={}
+#     for i in lst:
+#         freq[i]=freq.get(i,0)+1
+#     return freq
+
+
+# ls = ['a', 'b', 'a', 'c', 'b', 'a']
+# print(coun_freq(ls))
+
+# def count_frequency(lst):
+#     freq = {}  # empty dictionary to store counts
+#     for item in lst:
+#         if item in freq:
+#             freq[item] += 1   # increase count if already present
+#         else:
+#             freq[item] = 1    # set to 1 if new item
+#     return freq
+
+# ls = ['a', 'b', 'a', 'c', 'b', 'd']
+# print(count_frequency(ls))
+
