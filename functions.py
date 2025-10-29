@@ -203,3 +203,81 @@ def squr_ls(val):
 # ls = ['a', 'b', 'a', 'c', 'b', 'd']
 # print(count_frequency(ls))
 
+
+###################################################
+# # lambda function
+# #  syntax: lambda arguments: expression 
+# #its an anonymous function it dosent have name,it means we can define and call it in single line
+
+# def add_val(a,b,c):
+#     res =a+b+c 
+#     return res
+# print(add_val(1,2,3))
+
+# print((lambda a,b,c:a+b+c)(10,20,30))
+
+# res = lambda a,b,c:a+b+c
+# print(res(100,200,300))
+
+
+# res = lambda a,b:a if a>b else b
+# print(res(100,200))
+
+
+
+# #if we need to sort with length
+# ls =['#','abcd','abc','@abc'] # list of strings
+# ls.sort(key=lambda x:len(x)) # sort based on length of each string by using lambda function as key
+# print(ls)
+
+# def func(v=2):
+#     c =v*2
+#     return c
+# x=2
+# high=lambda x,func:x+func
+# print(high(3,func()))
+
+# grade =lambda val :'A' if val>=990 else 'B' if val>=75 else 'C' if val>=50 else 'Fail'
+# print(grade(95))
+# print(grade(75))
+# print(grade(84))
+# print(grade(50))
+# print(grade(30))
+
+# data =[(1,5),(2,1),(3,7),(4,3)]
+# data.sort(key=lambda x:x[1])
+# print (data)
+
+
+# data = [{'name': 'John', 'age': 25}, {'name': 'Jane', 'age': 20}, {'name': 'Bob', 'age': 30}]
+# data.sort(key=lambda x:x['age'])
+# print(data)
+
+# data = [{'name': 'John', 'age': 25}, {'name': 'Jane', 'age': 20}, {'name': 'Bob', 'age': 30}]
+# str=sorted(data,key=lambda x:x['age'])
+# print(data)
+# print(str)
+
+#function composition
+
+
+# def f(x):
+#     return x+2
+
+# def g(x):
+#     return x*3
+
+# def compose(f,g):
+#     return lambda x:f(g(x))
+
+# res =compose (f,g)
+# print(res(5))
+
+# f= lambda x:x+2
+# g=lambda x:x*3
+# compse =lambda f,g:lambda x:f(g(x))
+# res =compose(f,g)
+# print(res(5))
+
+
+
