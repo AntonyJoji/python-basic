@@ -281,3 +281,91 @@ def squr_ls(val):
 
 
 
+# val="hello python"
+
+# def rm_spaces(data):
+#     return data.strip()
+
+# def to_lower(data):
+#     return data.lower()
+
+# def compose(a,b,val):
+#     return a(b(val))
+
+# print(compose(rm_spaces,to_lower,val))
+
+
+# nums =[1,2,3,4,5,6,7,8,9,10]
+
+# def even(data):
+#     return [i for i in data if i%2==0]
+
+# def sqr(data):
+#     return [i*i for i in data]
+
+# def compose(a,b,data):
+#     return a(b(data))
+
+# print (compose(sqr,even,nums))
+
+
+#################################################
+# #function recursion ,a function calling itself
+
+# def factorial(n):
+#     if n==0 or n==1:
+#         return 1
+#     elif n<0:
+#         return "no fact"
+#     else:
+#         return n * factorial(n-1)
+
+# num = int(input("enter the number:"))
+# res = factorial(num)
+# if res == "no fact":
+#     print(f"there is no fact {num}")
+# else:
+
+#   print("Factorial:", res)
+#########################################################
+##sum of n natural number########
+
+# def sum_num(n):
+#     if n==0:
+#         return n
+#     return n+sum_num(n-1)
+
+# print (sum_num(5))
+
+#########count the digit of a number###############
+# val=4356
+# def count_digit(num):
+#     if num==0:
+#         return 0
+#     return 1+count_digit(num//10)
+# print(count_digit(val))
+
+#ls =[1,2,3,4,5]
+
+# def list_sum(ls):
+#     if len(ls)==0:
+#         return 0
+#     else:
+#         return ls[0]+list_sum(ls[1:])
+    
+# ls=[1,2,3,4,5]
+# print (list_sum(ls))
+###################################################
+# find the work flow of the program :)
+ls=[1,[2,3],4,[5,6]]
+
+def ls_sum(data):
+    total =0
+    for val in data:
+        if type (val)==type([]):
+            total=total+ls_sum(val)
+        else:
+            total= total+val
+    return total
+
+print (ls_sum(ls))
