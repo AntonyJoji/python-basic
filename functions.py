@@ -357,15 +357,15 @@ def squr_ls(val):
 # print (list_sum(ls))
 ###################################################
 # find the work flow of the program :)
-ls=[1,[2,3],4,[5,6]]
+# ls=[1,[2,3],4,[5,6]]
 
-def ls_sum(data):
-    total =0
-    for val in data:
-        if type (val)==type([]):
-            total=total+ls_sum(val)
-        else:
-            total= total+val
-    return total
+# def ls_sum(data):
+#     total =0
+#     for val in data:
+#         if type (val)==type([]):
+#             total=total+ls_sum(val)
+#         else:
+#             total= total+val
+#     return total
 
-print (ls_sum(ls))
+# print (ls_sum(ls))
