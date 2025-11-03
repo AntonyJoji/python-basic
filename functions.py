@@ -369,3 +369,48 @@ def squr_ls(val):
 #     return total
 
 # print (ls_sum(ls))
+
+#################Enumerate_function################################
+##Enumerate_function is a built-in function in Python that adds a counter to an iterable and returns it as an enumerate object. 
+##This is particularly useful when you need both the index and the value of items in a loop.
+# to print index and value
+# ls =['red','black','blue']
+# vals = ['red','black','blue']
+# for i in range (len(vals)):
+#      print(i,vals[i])
+
+# # or
+
+# vals = ['red','black','blue']
+
+# for i in enumerate(vals):
+#     print(i)
+
+##########map,reduce,filter#############
+## map function is used to apply a function to all the items in an input list (or any iterable) and return an iterator (map object) of the results.
+
+# def sqr(a):
+#     return a*a
+
+# ls= [1,2,3,4]
+# # print(sqr(ls))
+# print(map(sqr,ls)) #map object
+# print(list(map(sqr,ls))) # convert map object to list
+# ## or
+# print (list(map(lambda x:x*x,ls))) # using lambda function
+
+
+### filter function is used to filter items from an input list (or any iterable) based on a specified condition and return an iterator (filter object) containing only the items that satisfy the condition.
+
+# nums =[1,2,3,4,5,6,7,8,9,10]
+# print(filter(lambda x:x%2==0,nums)) #filter object
+# print(list(filter(lambda x:x%2==0,nums))) # convert filter object to list if the condition is true
+
+#### reduce function is used to apply a binary function (a function that takes two arguments) cumulatively to the items of an input list (or any iterable) from left to right,
+#### or reducing the iterable to a single value.
+
+# from functools import reduce
+# ls=[1,2,3,4,5]
+# print(reduce(lambda x,y:x+y,ls)) # sum of all elements
+# print(reduce(lambda x,y:x*y,ls)) # multiplication of all elements
+##########################################
