@@ -33,11 +33,11 @@
 
 # squr_ls(100)
 
-def squr_ls(val):
-    ls=[]
-    for i in range(1,val+1):
-        ls.append(i*i)
-    return ls
+# def squr_ls(val):
+#     ls=[]
+#     for i in range(1,val+1):
+#         ls.append(i*i)
+#     return ls
 
     
 
@@ -414,3 +414,98 @@ def squr_ls(val):
 # print(reduce(lambda x,y:x+y,ls)) # sum of all elements
 # print(reduce(lambda x,y:x*y,ls)) # multiplication of all elements
 ##########################################
+
+# val =['red','black','blue'] # convert all to uppercase
+# ls=[]
+# for i in val:
+#     ls.append(i.upper())
+# print(ls)
+
+# #or
+# print(list(map(lambda x:x.upper(),val)))
+
+################################################
+
+# val =['red','black','blue']# length of each string
+# ls=[]
+# for i in val:
+#     ls.append(len(i))
+# print(ls)
+
+# ##or
+# print(list(map(lambda x:len(x),val)))
+
+
+# val =[10,30,20]# store in string
+# ls =[]
+# for i in val:
+#     ls.append(str(i))
+# print(ls)
+
+# ##or
+# print(list(map(str,val)))
+
+
+# nums =[4,5,6,7]#  multiply by its index possition
+# ls =[]
+# for i in range(len(nums)):
+#     ls.append(nums[i]*i)
+# print(ls)
+
+# ##or
+# print(list(map(lambda x:x[0]*x[1],enumerate(nums))))
+
+
+# ls =[(50,60,50),(35,45,30),(65,85,25)]# to find the total score of each tuple
+# total_scores =[]
+# for scores in ls:
+#     total=0
+#     for score in scores:
+#         total+=score
+#         total_scores.append(total)
+# print(total_scores)
+
+
+##or
+# print(list(map(lambda x:x[0]+x[1]+x[2],ls)))
+# ##or
+# print(list(map(lambda x:sum(x),ls)))
+
+
+# ls = ['antony@gmail.com','rem@yahoo.com','re@python.org']# to extract the domain names from the email addresses
+# domain_names=[]
+# for email in ls:
+#     domain_names.append(email.split('@')[1])
+# print(domain_names)
+
+# ##or
+# print(list(map(lambda x:x.split('@')[1],ls)))
+
+####################################################
+
+# data =['10','20','abc','30','xyz'] #conver this list of strings to integers,ignore the nonn numeric values to non numeric vallues
+
+# def find_int(x):
+#     if x.isdigit():
+#         return int(x)
+#     else:
+#         return None
+# print(list(map(find_int,data)))
+
+#################################################
+
+# ls =['01/02/2020','15/03/2021','31/12/2019'] # yyyy-mm-dd format
+
+# def convert_data(date_str):
+#     day,month,year =date_str.split('/')
+#     return print(year+'-'+month+'-'+day)
+# print(list(map(convert_data,ls)))
+
+# ##or
+
+# print(list(map(lambda x:'/'.join(x.split('/')[::-1]),ls)))
+
+
+
+# words =['data','java','python','AI','ML'] #  those with length greater than 3 characters print
+# print(list(filter(lambda x:len(x)>4,words)))
