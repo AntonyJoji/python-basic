@@ -356,7 +356,7 @@
 # ls=[1,2,3,4,5]
 # print (list_sum(ls))
 ###################################################
-# find the work flow of the program :)
+#### find the work flow of the program :)
 # ls=[1,[2,3],4,[5,6]]
 
 # def ls_sum(data):
@@ -509,3 +509,5 @@
 
 # words =['data','java','python','AI','ML'] #  those with length greater than 3 characters print
 # print(list(filter(lambda x:len(x)>4,words)))
+
+
