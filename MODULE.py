@@ -41,6 +41,7 @@
 
 #########################################################################
 
+# from asyncio import sleep
 import datetime as dt
 
 # print(dt.date(2024,5,12))
@@ -105,8 +106,78 @@ import random as rd
 # rd.shuffle(val)
 # print (val)
 
+## difference between sample and choices :- sample is without replacement and choices is with replacement or sample can not pick same element again but choices can pick same element again.
 
-ls =['red','blue','black','green','yellow','white','pink','purple']
-val =rd.sample(ls,k=1)
-print(val)
 
+# ls =['red','blue','black','green','yellow','white','pink','purple']
+
+# val =rd.sample(ls,k=1)
+# print(val)
+######################################################################################################################
+
+
+# firstname = ["devin", "dainty", "abin", "jessica", "ashna", "afitha"]
+# lastname = ["mathew", "mathew", "eldhose", "joseph", "hasif", "jabbar"]
+# streetname = ["high", "lon", "lose", "hola", "warks", "rody"]
+# states = ["AL", "KL", "ML", "CP", "EK", "DL"]
+# fakecities = ["logsow", "florida", "poland", "germany", "prague", "austria"]
+
+# for i in range(10):
+#     first =rd.choice(firstname)
+#     last =rd.choice(lastname)
+#     phone= f"{rd.randint(100,999)}--555---{rd.randint(100,999)}"
+
+#     street =rd.choice(streetname)
+#     state=rd.choice(states)
+#     city=rd.choice(fakecities)
+#     zipcode =rd.randint(10000,99999)
+#     address =f"{zipcode}{street} {city} {state}"
+#     mail = first+"." + last + "@fakeemail.com"
+#     print(f"Name: {first} {last}\nPhone: {phone}\nAddress: {address}\nEmail: {mail}\n")
+
+
+
+##############################################################################################
+
+# from time import sleep
+# lottery_tickets=[]
+# print("creating tickets...")
+# for i in range(100):
+#     lottery_tickets.append(rd.randrange(100000,999999))
+# v = rd.sample(lottery_tickets,k=1)
+# print("finding winner ticket.... please wait")
+# sleep(6)
+# print(f"winner ticket is :{v}")
+
+#######################################################################################
+
+# val =isinstance(5, list)
+# print (val)
+
+# val =isinstance(5,int)
+# print(val)
+
+# val =isinstance(5,(float,int,set,str,list))
+# print(val)
+
+###############################################################################################
+ ## Any
+ ## All
+
+
+
+# a= [False,True,True,True]
+# print(any(a))  # true if any one element is true
+# print(all(a))  # true if all elements are true
+
+
+# a=['','ab','abc']
+# print (any(a))
+
+# a= ['','abc','abcd']
+# print(all(a))
+
+
+# a=[0,1,2,3,4,5]
+# print(any(a)) # true because non zero numbers are considered as true in boolean context
+# print(all(a)) # false because 0 is considered as false in boolean context
