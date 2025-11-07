@@ -181,3 +181,47 @@ import random as rd
 # a=[0,1,2,3,4,5]
 # print(any(a)) # true because non zero numbers are considered as true in boolean context
 # print(all(a)) # false because 0 is considered as false in boolean context
+
+
+###################################################################################################
+
+####  ABS  #########################
+
+# a = -11
+# print(abs(a))  # absolute value
+
+# b= -56.67
+# print(abs(b))
+
+###### ROUND  ############################
+
+# print(round(12.54))
+# print(round(12.54678,2))
+
+# print(min(3,4,5,5,-1,2))
+# print(max(3,4,5,5,-1,2))
+
+import math as m
+
+# print (dir(m))
+
+# print(m.pi)
+# print(m.sqrt(16))
+# print(m.sin(m.pi/2))
+
+
+# print(m.floor(5.6))
+# print(m.ceil(5.6))
+
+# a,b =m.modf(100.12) # returns fractional and integer parts
+# print(a)
+# print(b)
+
+
+from statistics import *
+
+# print(mean([1,2,3,4,5,6,7,8,9]))# average
+# print(median([1,2,3,4,5,6,7,8,9]))# middle value
+
+# print(mode([1,2,3,4,3,2,3,8,9,4]))# most common value
+# print(multimode([1,2,3,4,3,2,3,8,9,4]))# list of most common values
