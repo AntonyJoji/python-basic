@@ -230,8 +230,46 @@
 
 
     
-   
+# randomlist =['a',0,2,3]
+
+# for i in randomlist:
+#     try:
+#         result =1/int(i)
+#         print("the result is :",result)
+#     except:
+#         print("error found for :",i)
 
 
+
+## python grogram to find the largest number in a list 
+## without using built-in function
+
+# numbers= [3,8,1,7,2,9,5,4]
  
+# largest = numbers[0]
+# position =0
 
+# for  i in range(len(numbers)):
+#     if numbers[i]>largest:
+#         largest=numbers[i]
+#         position =i
+# print("the largest number is:",largest)
+# print("its position is :-",position)
+
+
+## first non repeating element from the list:
+# text ='aabbcde'
+
+# for ch in text:
+#     if text.count(ch)==1:
+#         print ("first non repeating element:",ch)
+#         break
+     
+### swap the value without using third varible,
+# a= 10
+# b=20
+
+# a,b =b,a
+
+# print ("a=",a)
+# print ("b=",b)

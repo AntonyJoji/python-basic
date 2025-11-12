@@ -62,19 +62,40 @@ finally:#
 # print("completed")
 
 
-try:
-    num1= int(input("enter the number1::"))
-    num2=int(input("enter the number2::"))
-    res=num1/num2
-    print(res)
-except NameError:
-    print ("Name error occurred!")
-except ZeroDivisionError:
-    print("ZeroDivitionError occurred!")
-except:
-    print("all done")
+# try:
+#     num1= int(input("enter the number1::"))
+#     num2=int(input("enter the number2::"))
+#     res=num1/num2
+#     print(res)
+# except NameError:
+#     print ("Name error occurred!")
+# except ZeroDivisionError:
+#     print("ZeroDivitionError occurred!")
+# except:
+#     print("all done")
     
-print("completed")
+# print("completed")
+
+
+
+# randomlist =['a',0,2,3]
+
+# for i in randomlist:
+#     try:
+#         result =1/int(i)
+#         print("the result is :",result)
+#     except:
+#         print("error found for :",i)
+
+
+# val = int(input("enter the number:-"))
+# try:
+#     assert val <10
+#     print(val/2)
+# except:
+#     print("use a valid data")
+
+
 
 
 
