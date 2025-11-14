@@ -161,8 +161,23 @@
 # f.close()
 
 
-f = open('det.jpg','rb') ## rb :=read binary
-data = f.read()
-new =open('new_det.jpg','wb')## 'wb':= write binary ,is used to create a new copy of the file
-new.write(data)
-f.close()
+# f = open('det.jpg','rb') ## rb :=read binary
+# data = f.read()
+# new =open('new_det.jpg','wb')## 'wb':= write binary ,is used to create a new copy of the file
+# new.write(data)
+# f.close()
+
+
+# with open ('sample.txt') as f:
+#     data = f.read()
+#     print(data)
+
+with open ('sample.txt','r') as f:
+    data = f.read()
+    print(data)
+    f.seek(0)
+    f.write("line number1 \n")
+    f.seek(0)
+    print(f.read())
+
+ 
