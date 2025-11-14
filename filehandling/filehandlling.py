@@ -172,12 +172,79 @@
 #     data = f.read()
 #     print(data)
 
-with open ('sample.txt','r') as f:
-    data = f.read()
-    print(data)
-    f.seek(0)
-    f.write("line number1 \n")
-    f.seek(0)
-    print(f.read())
+# with open ('sample.txt','r+') as f:
+#     data = f.read()
+#     print(data)
+#     f.seek(0)
+#     f.write("line number1 \n")
+#     f.seek(0)
+#     print(f.read())
+
+
+# with open ('sample.txt','w+') as f:
+#     f.write("New line \n")
+#     f.seek(0)
+#     print(f.read())
 
  
+
+# with open ('sample.txt') as f,open ('new.txt','w') as new_f:
+#     data = new_f.write(f.read())
+
+
+# with open ('det.jpg','rb') as f,open("new_det.jpg",'wb')as new_f:
+#     data = new_f.write(f.read())
+
+
+
+# count = 0
+# with open ('text.txt','r') as f:
+#     for line in f:
+#         count=count+1
+# print ('the total lines',count)
+
+### OR #####
+
+# with open ('text.txt') as f:
+#     count =len(f.readlines())
+#     print(f'total line :-{count}')
+
+##########OR#######
+
+# with open('sample.txt')as f:
+#     count = sum(1 for _ in f)
+#     print (f" total number of line:--{count}")
+
+# word = input("enter the string:-")
+# with open('sample.txt')as f:
+#     for line in f:
+#         if word in line:
+#             print (f"found:-{line.strip()}")
+
+
+# ls =['sam','ram','john']
+# filename= 'name.txt'
+
+# with open ('name.txt','w')as f:
+#     for name in ls:
+#         f.write(name +'\n')/
+
+
+# with open ('sample.txt')as f:
+#     data = f.read().splitlines()
+#     print(data)
+
+##############################################
+
+import os
+from os import *
+# os.remove('text1.txt')   
+# print(getcwd())
+print(listdir())
+
+        
+
+
+
+
+
