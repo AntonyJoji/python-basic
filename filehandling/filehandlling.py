@@ -236,15 +236,40 @@
 
 ##############################################
 
-import os
-from os import *
+# import os
+# from os import *
 # os.remove('text1.txt')   
 # print(getcwd())
-print(listdir())
-
-        
+# print(listdir())
 
 
+# mkdir('antony')# making new directory
+# rmdir('antony')# remove the directory
 
+
+# makedirs('a/b/c')
+# removedirs('a/b/c')
+
+
+## to check the file and folder 
+
+# print(os.path.exists('sample.txt'))
+# print(os.path.isdir('office'))
+# print(os.path.isfile('office'))
+
+# rename('name.txt','names.txt') ## rename the file at first the file name,second the new file name 
+
+# system('dir')
+
+# print(stat("names.txt"))
+
+# makedirs('a/b/c')
+# removedirs('a/b/c') # it only delete the plane directory
+
+# import shutil as sh
+# sh.rmtree()
+
+
+#############################################################
 
 
