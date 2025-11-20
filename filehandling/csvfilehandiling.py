@@ -122,3 +122,48 @@ import csv
 #             if line['fname'].startswith('a'):
 #                 csv_writer.writerow(line)
 
+###to find gmail users ############
+
+# with open("dataone.csv", "r") as csv_file:
+#     csv_reader = csv.DictReader(csv_file)  
+#     with open('one_one3.csv','w') as new_file:
+#         fieldname =['fname','lname','email']
+#         csv_writer = csv.DictWriter(new_file,fieldnames=fieldname,delimiter=';')
+#         csv_writer.writeheader()
+#         for line in csv_reader:
+#             if line['email'].endswith('gmail.com'):
+#                 csv_writer.writerow(line)
+
+
+### only for email #####
+
+import csv
+
+# with open("dataone.csv", "r") as csv_file:
+#     csv_reader = csv.DictReader(csv_file)
+
+#     with open("gmail_only.csv", "w") as new_file:
+#         new_file.write("email\n")   # write header
+
+#         for line in csv_reader:
+#             if line['email'].endswith('@gmail.com'):   # only gmail users
+#                 new_file.write(line['email'] + "\n")   # write only email
+ ## or
+
+# with open("dataone.csv", "r") as csv_file:
+#     csv_reader = csv.DictReader(csv_file)  
+#     with open('gmail_only1.csv','w') as new_file:
+#         fieldname =['email']
+#         csv_writer = csv.DictWriter(new_file,fieldnames=fieldname,delimiter=';')
+#         csv_writer.writeheader()
+#         for line in csv_reader:
+#             if line['email'].endswith('gmail.com'):
+#                 csv_writer.writerow({'email':line['email']})
+
+
+
+
+
+
+
+
