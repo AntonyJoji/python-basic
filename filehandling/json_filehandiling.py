@@ -59,6 +59,77 @@ jdata ='''
 
 ######################
 ### find the the longest name ######
-data=json.loads(jdata)
-longest =max(data['people'],key=lambda p:len(p['name']))
-print(longest['name'])
+# data=json.loads(jdata)
+# longest =max(data['people'],key=lambda p:len(p['name']))
+# print(longest['name'])
+# print(longest)
+
+#####################################################################
+
+# with open ('states.json') as f:
+#     data = json.load(f)
+#     print (data)
+###################################################################
+# import json
+# with open ('states.json') as f:
+#     data = json.load(f)
+# names = [person["name"] for person in data["states"]]
+# print(names)
+
+# data = json.loads(jdata)
+# for person in data ['people']:
+#     del person['phone']
+# newdata =json.dumps(data,indent=3,sort_keys=True) ## DUMPS conver to json string format
+# print(newdata)
+
+###dump save to json file
+
+# import json
+
+# with open('states.json') as f:
+#     data = json.load(f)
+
+# # Collect all names into a list
+# val = [{'Names':i['name'] }for i in data['states']]
+
+# # Save the list into a new file
+# with open('statesname.json', 'w') as new_f:
+#     json.dump(val, new_f, indent=2)
+
+
+#################################################################
+
+###to extract only those states whose areacode list has exactly ONE value.
+
+
+# import json
+
+# with open("states.json") as f:
+#     data = json.load(f)  # <-- use load() not loads()
+
+# # Select states with exactly one area code
+# val = {'States': [i for i in data["states"] if len(i["areacode"]) == 1]}
+
+# # Write to new JSON file
+# with open("states1.json", 'w') as new_f:
+#     json.dump(val, new_f, indent=2)
+
+
+
+##########################################################################################
+
+########## rename the key name to state_name
+
+import json
+
+with open("states.json")as f:
+    data =json.load(f)
+
+
+for state in data ['states']:
+   state['state_name']=state.pop('name')
+
+
+with open ("state_rename.json",'w') as new_f:
+    json.dump(data,new_f,indent=2)
+

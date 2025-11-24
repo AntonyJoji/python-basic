@@ -1,0 +1,82 @@
+{
+  "states": [
+    {
+      "abbreviation": "AL",
+      "areacode": [
+        "123",
+        "205",
+        "455"
+      ],
+      "state_name": "Alabama"
+    },
+    {
+      "abbreviation": "AK",
+      "areacode": [
+        "233"
+      ],
+      "state_name": "Alaska"
+    },
+    {
+      "abbreviation": "AS",
+      "areacode": [
+        "234",
+        "566"
+      ],
+      "state_name": "American Samoa"
+    },
+    {
+      "abbreviation": "AZ",
+      "areacode": [
+        "239",
+        "567",
+        "888"
+      ],
+      "state_name": "Arizona"
+    },
+    {
+      "abbreviation": "AR",
+      "areacode": [
+        "345",
+        "457"
+      ],
+      "state_name": "Arkansas"
+    },
+    {
+      "abbreviation": "CA",
+      "areacode": [
+        "444"
+      ],
+      "state_name": "California"
+    },
+    {
+      "abbreviation": "CO",
+      "areacode": [
+        "777"
+      ],
+      "state_name": "Colorado"
+    },
+    {
+      "abbreviation": "CT",
+      "areacode": [
+        "345",
+        "898"
+      ],
+      "state_name": "Connecticut"
+    },
+    {
+      "abbreviation": "DE",
+      "areacode": [
+        "067"
+      ],
+      "state_name": "Delaware"
+    },
+    {
+      "abbreviation": "DC",
+      "areacode": [
+        "234",
+        "456"
+      ],
+      "state_name": "District Of Columbia"
+    }
+  ]
+}

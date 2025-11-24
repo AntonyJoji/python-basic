@@ -1,0 +1,32 @@
+{
+  "States": [
+    {
+      "name": "Alaska",
+      "abbreviation": "AK",
+      "areacode": [
+        "233"
+      ]
+    },
+    {
+      "name": "California",
+      "abbreviation": "CA",
+      "areacode": [
+        "444"
+      ]
+    },
+    {
+      "name": "Colorado",
+      "abbreviation": "CO",
+      "areacode": [
+        "777"
+      ]
+    },
+    {
+      "name": "Delaware",
+      "abbreviation": "DE",
+      "areacode": [
+        "067"
+      ]
+    }
+  ]
+}
