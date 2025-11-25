@@ -120,16 +120,54 @@ jdata ='''
 
 ########## rename the key name to state_name
 
-import json
+# import json
 
-with open("states.json")as f:
-    data =json.load(f)
-
-
-for state in data ['states']:
-   state['state_name']=state.pop('name')
+# with open("states.json")as f:
+#     data =json.load(f)
 
 
-with open ("state_rename.json",'w') as new_f:
-    json.dump(data,new_f,indent=2)
+# for state in data ['states']:
+#    state['state_name']=state.pop('name')
+
+
+# with open ("state_rename.json",'w') as new_f:
+#     json.dump(data,new_f,indent=2)
+
+
+# import json
+
+# # Read file
+# with open("states.json") as f:
+#     data = json.load(f)
+
+# # Delete the 'areacode' field
+# for i in data["states"]:
+#     del i["areacode"]
+
+# # Write updated data to a new file
+# with open("states3.json", "w") as newf:
+#     json.dump(data, newf, indent=2)
+
+# print("areacode removed and saved to states3.json")
+      
+
+######## CRUD - post,get,put,delete
+
+# import requests as re
+# res = re.get("https://jsonplaceholder.typicode.com/todos")
+# with open('todos.json','w') as f:
+#     f.write(res.text)
+
+# import requests as re
+# res = re.get("https://jsonplaceholder.typicode.com/todos")
+# data = json.loads(res.text)
+# with open('todos.json','w') as f:
+#     json.dump(data,f,indent=2)
+
+
+
+
+
+
+
 
