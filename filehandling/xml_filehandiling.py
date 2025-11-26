@@ -37,20 +37,111 @@ import xml.etree.ElementTree as ET
 
 
 
+# tree = ET.parse('sample.xml')
+# print(tree)
+# mytree = tree.getroot()
+# print(mytree)
+# print(mytree[0].tag)
+# print(mytree[0][0].tag)
+
+
+# for i in mytree:
+#     print(i.tag)
+
+# for i in mytree[0]:
+#     print(i.tag)
+
+
+# for i in  mytree[0]:
+#     print(i.tag,i.attrib)
+
+
+
+# xml ='''
+# <root>
+#     <item>one</item>
+#     <item>two</item>
+#     <pro>
+#         <item>three</item>
+#     </pro>
+# </root>
+
+
+# '''
+
+# tree =ET.fromstring(xml)
+# print([val.text for val in tree.findall('item')])
+# print([val.text for val in tree.iter('item')])
+
+
+
 tree = ET.parse('sample.xml')
-print(tree)
-mytree = tree.getroot()
-print(mytree)
-print(mytree[0].tag)
-print(mytree[0][0].tag)
+mytree =tree.getroot()
+
+# for i in mytree.findall('book'):
+#     auth =i.find('author').text
+#     title =i.find('title').text
+#     print(auth,title)
+
+# #### adding new discrition
+# for i in mytree.iter('discription'):
+#     a=str(i.text)+'new data has been added'
+#     i.text =a
+# tree.write('new.xml')
 
 
-for i in mytree:
-    print(i.tag)
 
-for i in mytree[0]:
-    print(i.tag)
+# for i in mytree.iter('discription'):
+#     a=str(i.text)+'new data has been added'
+#     i.text =a
+#     i.set('update','yes')
+# tree.write('new1.xml')
+
+#### specific update
+# for i in mytree[0].iter('discription'):
+#     a=str(i.text)+'new data has been added'
+#     i.text =a
+#     i.set('update','yes')
+# tree.write('new1.xml')
 
 
-for i in  mytree[0]:
-    print(i.tag,i.attrib)
+#### to sreate new element
+# ET.SubElement(mytree,'speciality')
+# for i in mytree.iter('speciality'):
+#     i.text = 'south indian food'
+# tree.write('new3.xml')
+
+### inside the catlog 0th index
+# ET.SubElement(mytree[0],'speciality')
+# for i in mytree.iter('speciality'):
+#     i.text = 'south indian food'
+# tree.write('new4.xml')
+
+#### on every tag to create
+
+# for i in range(len(mytree)):
+#     ET.SubElement(mytree[i],'speciality')
+#     for i in mytree.iter('speciality'):
+#         i.text ='south indian food'
+# tree.write('new5.xml')
+
+#######or
+
+# for i in mytree.iter('book'):
+#     val=ET.SubElement(i,'speciality')
+#     val.text= 'south indian book'
+# tree.write('new6.xml')
+
+
+### to delete the attribute
+# tree = ET.parse('new6.xml')
+# mytree = tree.getroot()
+
+# mytree[0].attrib.pop('id')
+# tree.write('new7.xml')
+
+# mytree[0].remove(mytree[0][0])
+# tree.write('new8.xml')
+
+# mytree[0].clear()
+# tree.write('new9.xml')
