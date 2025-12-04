@@ -143,13 +143,46 @@ emp3 = employees(first="dan",middle='r',last='kumar',pay=5000)
 # print(emp1.__dict__)
 # print(emp2.__dict__)
 
-emplo= [emp1,emp2,emp3]
-for emp in emplo:
-     print(emp.fullname(),emp.pay,emp.rais_amount())
+# emplo= [emp1,emp2,emp3]
+# for emp in emplo:
+#      print(emp.fullname(),emp.pay,emp.rais_amount())
 
-### or
+# ### or
 
-print([i for i in emp1.__dict__.values() if i is not None])
-print(list(emp1.__dict__.values()))
+# print([i for i in emp1.__dict__.values() if i is not None])
+# print(list(emp1.__dict__.values()))
 
-print (vars(emp1).values())
+# print (vars(emp1).values())
+
+
+class employees:
+    "its aabout the employee details tho"
+    emps = []
+    raise_amt=1.04
+    def __init__(self,first,middle=None,last=None,pay=None): ### constructor automatically called when we create object
+        self.first=first ## instance variable
+        self.last=last ## instance variable
+        self.middle=middle
+        self.pay=pay
+        self.email=first+last+"@gmail.com"## instance variable
+        self.emps.append(self)
+    def fullname(self):## 'self' is used to access instance variable and method inside the class
+           "fullname method of employee"
+           if self.middle is None:
+                return self.first+" "+self.last
+           else:
+                return self.first+" "+self.middle+" "+self.last
+    def rais_amount(self):
+         return self.pay*self.raise_amt
+
+emp1 = employees(first="david",last="mathew",pay=1000)
+emp2 = employees(first="dainty",last="mathew",pay=4000)
+emp3 = employees(first="dan",middle='r',last='kumar',pay=5000)
+
+
+print(employees.__doc__)
+print(employees.fullname.__doc__)
+print(emp1.__class__.__name__)
+
+
+
