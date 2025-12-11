@@ -86,10 +86,93 @@
 # val()## calling logger function
 
 
-def html_tag(tag):
-    def wrap_msg(msg):
-        print(f"<{tag}>{msg}</{tag}>")
-    return wrap_msg
+# def html_tag(tag):
+#     def wrap_msg(msg):
+#         print(f"<{tag}>{msg}</{tag}>")
+#     return wrap_msg
 
-res= html_tag("h1") ## returning function object
-res("first line") ## calling returned function
+# res= html_tag("h1") ## returning function object
+# res("first line") ## calling returned function
+
+
+# def outer():
+#     count =0
+#     def increment():
+#         nonlocal count ## to modify variable of outer function so we use nonlocal keyword
+#         count+=1
+#         return count
+#     return increment
+# val = outer()
+# print(val())
+
+
+# def bank_account (initial_balance):
+#     balance = initial_balance
+
+#     def transation(amt):
+#         nonlocal balance
+#         if balance+amt>=0:
+#             balance += amt
+#             return  f"balance: {balance}"
+#         else:
+#             return "insufficient balance"
+#     return transation
+    
+# acc = bank_account(1000)
+# print(acc(500))
+# print(acc(-500))
+# print(acc(-2000))
+    
+
+
+# def decorator_function(original_function):
+#     def warapper_function():
+#         print(f"wrapper executed befor the {original_function.__name__}")
+#         return original_function()
+#     return warapper_function
+
+# def display():
+#     print("this is display function")
+
+
+# wrapped = decorator_function(display) ## passing function to decorator function
+# wrapped() ## calling wrapper function
+
+# def decorator_function(original_function):
+#     def warapper_function():
+#         print(f"wrapper executed befor the {original_function.__name__}")
+#         return original_function()
+#     return warapper_function
+
+# @decorator_function ## syntax to apply decorator
+# def display():
+#     print("this is display function")
+
+# display()
+
+
+
+# def decorator_function(original_function):
+#     def warapper_function(name,age):
+#         print(f"wrapper executed befor the {original_function.__name__}")
+#         return original_function(name,age)
+#     return warapper_function
+
+# @decorator_function ## syntax to apply decorator
+# def display(name,age):
+#     print(f"this is display function with arguments {name}{age}")
+
+# display('antony',24)
+
+
+def decorator_function(original_function):
+    def warapper_function(*a):
+        print(f"wrapper executed befor the {original_function.__name__}")
+        return original_function(*a)
+    return warapper_function
+
+@decorator_function ## syntax to apply decorator
+def display(name,age):
+    print(f"this is display function with arguments {name}{age}")
+
+display('antony',24)
