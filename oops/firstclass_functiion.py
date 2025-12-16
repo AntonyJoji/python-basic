@@ -165,14 +165,82 @@
 # display('antony',24)
 
 
-def decorator_function(original_function):
-    def warapper_function(*a):
-        print(f"wrapper executed befor the {original_function.__name__}")
-        return original_function(*a)
-    return warapper_function
+# def decorator_function(original_function):
+#     def warapper_function(*a):
+#         print(f"wrapper executed befor the {original_function.__name__}")
+#         return original_function(*a)
+#     return warapper_function
 
-@decorator_function ## syntax to apply decorator
-def display(name,age):
-    print(f"this is display function with arguments {name}{age}")
+# @decorator_function ## syntax to apply decorator
+# def display(name,age):
+#     print(f"this is display function with arguments {name}{age}")
 
-display('antony',24)
+# display('antony',24)
+
+  ################################3 class as decorator###########################
+# class decorator_class:
+#     def __init__(self,org_function): # constructor
+#         self.org_function =org_function# constructor to take original function as argument
+#     def __call__(self, *args, **kwargs):## need to conver to the callable object
+#         print(f"warapper execution before {self.org_function.__name__}")# printing original function name
+#         return self.org_function(*args,**kwargs)## calling original function
+
+
+
+
+# @decorator_class
+# def display():
+#     print("this is display function")
+# display()## decordted class calling
+# @decorator_class
+# def display_info():
+#     print("this is display function_info function! with arguments {name} {age}")
+# display_info("ram",24)## decordted class calling
+
+# import time 
+# def calc_timesqr(numbers):
+#     start_time=time.time()
+#     res =[]
+#     for num in numbers:
+#         res.append(num*num)
+#     end = time.time()
+#     print (f'{calc_timesqr.__name__}:{(end-start_time)*1000}mille sec')
+
+#     return res
+
+# array = range(1,10001)
+# sqr =calc_timesqr(array)
+# # print(sqr)
+
+
+import time 
+def find_time (func):
+    def warpper(*args,**kwardgs):
+        start =time.time()
+        calctime=func(*args,**kwardgs)
+        end =time.time()
+        print(f'{calc_timesqr.__name__}:{(end-start)*1000}mille sec')
+        return calctime
+    return warpper
+
+@find_time
+def calc_timesqr(numbers):
+    res =[]
+    for num in numbers:
+        res.append(num*num)
+
+    return res
+
+def calc_timecube(number):
+    res =[]
+    for num in number:
+        res.append(num**3)
+    return res
+
+
+
+array = range(1,10001)
+sqr =calc_timesqr(array)
+cube =calc_timecube(array)
+
+
