@@ -213,34 +213,94 @@
 # # print(sqr)
 
 
-import time 
-def find_time (func):
-    def warpper(*args,**kwardgs):
-        start =time.time()
-        calctime=func(*args,**kwardgs)
-        end =time.time()
-        print(f'{calc_timesqr.__name__}:{(end-start)*1000}mille sec')
-        return calctime
-    return warpper
+# import time 
+# def find_time (func):
+#     def warpper(*args,**kwardgs):
+#         start =time.time()
+#         calctime=func(*args,**kwardgs)
+#         end =time.time()
+#         print(f'{calc_timesqr.__name__}:{(end-start)*1000}mille sec')
+#         return calctime
+#     return warpper
 
-@find_time
-def calc_timesqr(numbers):
-    res =[]
-    for num in numbers:
-        res.append(num*num)
+# @find_time
+# def calc_timesqr(numbers):
+#     res =[]
+#     for num in numbers:
+#         res.append(num*num)
 
-    return res
+#     return res
 
-def calc_timecube(number):
-    res =[]
-    for num in number:
-        res.append(num**3)
-    return res
-
-
-
-array = range(1,10001)
-sqr =calc_timesqr(array)
-cube =calc_timecube(array)
+# def calc_timecube(number):
+#     res =[]
+#     for num in number:
+#         res.append(num**3)
+#     return res
 
 
+
+# array = range(1,10001)
+# sqr =calc_timesqr(array)
+# cube =calc_timecube(array)
+
+
+# def decorator_with_arg(msg):
+#     def actual_decorator(func):
+#         def warpper(*args):
+#             print(f"{msg}-before calling{func.__name__}")
+#             result =func(*args)
+#             print(result)
+#             print(f"{msg}-after calling {func.__name__}")
+#             return result
+#         return warpper
+    
+#     return actual_decorator
+    
+# @decorator_with_arg("coustom log message")
+# def say_hello(name):
+#     return f"Hello {name}"
+
+# res=say_hello("anto")
+
+
+
+# def uppercase_decorator(func):
+#     def wrapper1(*args):
+#         result =func(*args)
+#         return result.upper()
+#     return wrapper1
+
+# def exclamation_decorator(func):
+#     def wrapper2(*args):
+#         result= func(*args)
+#         return result + '!'
+    
+#     return wrapper2
+
+# class greeting:
+#     def __init__(self,name):
+#         self.name =name
+
+#     @exclamation_decorator
+#     @uppercase_decorator # wrapper 1
+#     def say_hello(self):## wrapper 2
+#         return f"hello {self.name}"
+    
+# greet =greeting("anto")
+# print(greet.say_hello())
+
+
+
+class sample:
+    value =" hi"
+    def getval(self):
+        value ="hello"
+        print(f'the value is:{self.value}')
+
+new = sample()
+new.getval()
+newone =sample()
+newone.getval()
+# del newone ## to delete the instance 
+sample.value="hola"
+print(sample.value)
