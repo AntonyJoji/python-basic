@@ -291,16 +291,16 @@
 
 
 
-class sample:
-    value =" hi"
-    def getval(self):
-        value ="hello"
-        print(f'the value is:{self.value}')
+# class sample:
+#     value =" hi"
+#     def getval(self):
+#         value ="hello"
+#         print(f'the value is:{self.value}')
 
-new = sample()
-new.getval()
-newone =sample()
-newone.getval()
-# del newone ## to delete the instance 
-sample.value="hola"
-print(sample.value)
+# new = sample()
+# new.getval()
+# newone =sample()
+# newone.getval()
+# # del newone ## to delete the instance 
+# sample.value="hola"
+# print(sample.value)
