@@ -91,22 +91,163 @@
 
 ##########iterators and generators###############
 
-ls = [1,2,3,4] ## iterable object
-# for i in ls:
-#     print(i)  
+# ls = [1,2,3,4] ## iterable object
+# # for i in ls:
+# #     print(i)  
 
-print(dir(ls)) 
+# print(dir(ls)) 
 
-ls =[1,2,3,4]
-print(ls)
-val = iter(ls) ## creating iterator object using iter() function
-print(dir(val))
-print(next(val)) ## accessing elements using next() function
-print(next(val))## we have the control to access the elements
-print(next(val)) ##  iterator keeps track of the current position           
-print(next(val))
+# ls =[1,2,3,4]
+# print(ls)
+# val = iter(ls) ## creating iterator object using iter() function
+# print(dir(val))
+# print(next(val)) ## accessing elements using next() function
+# print(next(val))## we have the control to access the elements
+# print(next(val)) ##  iterator keeps track of the current position           
+# print(next(val))
 
-## or
+# ## or
 
-# for i in val:
+# # for i in val:
+# #     print(i)
+
+
+
+
+# class myrange:
+#     def __init__(self,start,end):
+#         self.start =start
+#         self.end =end
+#     def __iter__(self):
+#         return self
+#     def __next__(self):
+#         if self.start >= self.end:
+#             raise StopIteration
+#         current = self.start
+#         self.start +=1
+#         return current
+           
+
+
+# nums = myrange(1,10)
+# # print(next(nums))
+# # print(next(nums))
+# # print(next(nums))
+
+# ## or 
+
+# for i in nums:
 #     print(i)
+
+
+###########generators###############
+
+
+# def myrange (start):
+#     current = start
+#     while True:
+#         yield current
+#         current +=1
+
+# res = myrange(5)
+# print(next(res))
+# for i in res:
+#     print(i)
+    
+
+
+## example 
+
+# def val():
+#     yield 1
+#     yield 2
+# res = val()
+# print(next(res))
+# print(next(res))
+
+
+
+## example2
+
+# class myword():
+#     def __init__(self,sentence):
+#         self.sentence = sentence
+#         self.index = 0
+#         self.word = self.sentence.split( )
+        
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.index >= len(self.word):
+#             raise StopIteration
+#         index = self.index
+#         self.index += 1
+#         return self.word[index]
+    
+    
+# myobj = myword('hi i am devin mathew')
+# print(next(myobj))
+# print(next(myobj))
+# print(next(myobj))
+# print(next(myobj))  
+# print(next(myobj))
+
+
+# ## the simple way using generator function
+
+# def mywords(sentence):
+#     for word in sentence.split():
+#         yield word
+
+# obj = mywords("hello anto how are you")
+# print(next(obj))
+# print(next(obj))
+# print(next(obj))        
+# print(next(obj))
+# print(next(obj))
+
+########## abstract class ###########
+
+
+from abc import ABC,abstractmethod
+class vehicle(ABC):
+    # def __init__(self):
+    #     self.change_gear()
+        
+    def start_enginr(self):
+        print("starting engine")
+        
+    def apply_break(self):
+        print("applying break")
+        
+    def stop_engine(self):
+        print("stopping the engine")
+        
+    @abstractmethod    
+    def change_gear(self):
+        print("changing gear maunally")
+        
+    
+class car(vehicle):
+    def open_sunroof(self):
+        print("opening sunroof")
+        
+    def change_gear(self):
+        print("changing gear maunally")
+        
+class truck(vehicle):
+    def load_weight(self):
+        print("loading weight")
+        
+    def change_gear(self):
+        print("changing gear maunally")
+# v = vehicle()
+c = car()
+t = truck()
+# v.change_gear()
+# c.change_gear()
+# t.change_gear()
+
+
+
