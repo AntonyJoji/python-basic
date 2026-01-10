@@ -70,24 +70,43 @@
 
 ################################################
 
-class person:
-    __emp_type ='HR'
-    def __init__(self,name,age,salary):
-        self.name =name
-        self._age =age  ## protected attribute use only within class and subclass
-        self.__salary =salary ## private attribute cannot be accessed outside the class
-    def show_salary(self):
-        return self.__salary, self.__emp_type  ## accessing private attribute within the class
+# class person:
+#     __emp_type ='HR'
+#     def __init__(self,name,age,salary):
+#         self.name =name
+#         self._age =age  ## protected attribute use only within class and subclass
+#         self.__salary =salary ## private attribute cannot be accessed outside the class
+#     def show_salary(self):
+#         return self.__salary, self.__emp_type  ## accessing private attribute within the class
 
 
-obj = person("anto",24,50000) ## instance attribution
-print(obj.show_salary()) ## accessing private attribute using method within the class
-print(obj.name)
-print(obj._age)
-#print(obj.salary)   ## cannot be accessed outside the class                    
+# obj = person("anto",24,50000) ## instance attribution
+# print(obj.show_salary()) ## accessing private attribute using method within the class
+# print(obj.name)
+# print(obj._age)
+# #print(obj.salary)   ## cannot be accessed outside the class                    
 
-print()
-
-
+# # print(person.__emp_tpye) ## cannot be accessed outside the class
 
 
+##########iterators and generators###############
+
+ls = [1,2,3,4] ## iterable object
+# for i in ls:
+#     print(i)  
+
+print(dir(ls)) 
+
+ls =[1,2,3,4]
+print(ls)
+val = iter(ls) ## creating iterator object using iter() function
+print(dir(val))
+print(next(val)) ## accessing elements using next() function
+print(next(val))## we have the control to access the elements
+print(next(val)) ##  iterator keeps track of the current position           
+print(next(val))
+
+## or
+
+# for i in val:
+#     print(i)
