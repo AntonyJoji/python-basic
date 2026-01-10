@@ -47,21 +47,47 @@
 
 ####################################3
 
-class animal:
-    def eat(self):
-        print("eating")
-    def _walk (self): ## sigle underscore indicates protected method
-        print ("walking")
+# class animal:
+#     def eat(self):
+#         print("eating")
+#     def _walk (self): ## sigle underscore indicates protected method
+#         print ("walking")
 
-a= animal()
-a._walk()  ## can be accessed within the class and outside the class also but should be used within the class or subclass only
+# a= animal()
+# a._walk()  ## can be accessed within the class and outside the class also but should be used within the class or subclass only
 
 
-class animal:
-    def eat(self):
-        print("eating")
-    def __walk (self): ## double underscore indicates private method
-        print ("walking")   
+# class animal:
+#     def eat(self):
+#         print("eating")
+#     def __walk (self): ## double underscore indicates private method
+#         print ("walking")   
 
-a= animal()
-a.__walk()  ## cannot be accessed outside the class   
+# a= animal()
+# a.__walk()  ## cannot be accessed outside the class   
+
+
+
+################################################
+
+class person:
+    __emp_type ='HR'
+    def __init__(self,name,age,salary):
+        self.name =name
+        self._age =age  ## protected attribute use only within class and subclass
+        self.__salary =salary ## private attribute cannot be accessed outside the class
+    def show_salary(self):
+        return self.__salary, self.__emp_type  ## accessing private attribute within the class
+
+
+obj = person("anto",24,50000) ## instance attribution
+print(obj.show_salary()) ## accessing private attribute using method within the class
+print(obj.name)
+print(obj._age)
+#print(obj.salary)   ## cannot be accessed outside the class                    
+
+print()
+
+
+
+
