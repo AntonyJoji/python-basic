@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Home</title>
+</head>
+<body>
+
+<h1 style="color: rgb(186, 186, 219);">Product Home Page</h1>
+<h2>{{ catagory }}</h2>
+<br>
+
+{% for i in product %}
+<table border="3" style=" margin: 20px;">
+
+    {% for k, v in i.items %}
+    <tr>
+        <td>{{ k }}</td>
+        <td>
+            {% if k == "description" %}
+                <ul>
+                    {% for val in v %}
+                        <li>{{ val }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                {{ v }}
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+  {% endfor %}
+</body>
+</html>
