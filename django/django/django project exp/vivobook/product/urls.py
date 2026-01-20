@@ -4,4 +4,5 @@ from .views import *
 urlpatterns = [
     path('', landingpage),
     path('prohome/', homepage),
+    path('dbitem/', dbitemdisp),
 ]

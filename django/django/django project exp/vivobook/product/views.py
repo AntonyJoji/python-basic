@@ -40,3 +40,9 @@ def homepage(req):
     }
     response = page.render(data, req)
     return HttpResponse(response)
+
+def dbitemdisp(req):
+    page = loader.get_template('dbitemdisp.html')
+    data ={}
+    response = page.render(data, req)
+    return HttpResponse(response)
