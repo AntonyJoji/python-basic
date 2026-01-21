@@ -6,3 +6,4 @@ class data(models.Model):
     price =models.IntegerField()
     desc =models.CharField(max_length=200)
     fea =models.CharField(max_length=200)
+    
