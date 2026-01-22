@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
+from .models import data
 # Create your views here.
 
 def landingpage(req):
@@ -43,6 +44,14 @@ def homepage(req):
 
 def dbitemdisp(req):
     page = loader.get_template('dbitemdisp.html')
-    data ={}
-    response = page.render(data, req)
+    db=data.objects.all()
+    dataval ={'prods':db}
+    response = page.render(dataval, req)
+    return HttpResponse(response)
+
+def products(req,key):
+    page = loader.get_template('productdetails.html')
+    db=data.objects.get(name=key)
+    datas ={'pro':db}
+    response = page.render(datas, req)
     return HttpResponse(response)

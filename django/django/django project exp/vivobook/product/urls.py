@@ -5,4 +5,5 @@ urlpatterns = [
     path('', landingpage),
     path('prohome/', homepage),
     path('dbitem/', dbitemdisp),
+    path('details/<str:key>/', products),
 ]

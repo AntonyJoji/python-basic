@@ -7,3 +7,7 @@ class data(models.Model):
     desc =models.CharField(max_length=200)
     fea =models.CharField(max_length=200)
     
+
+    def __str__(self):
+        return str(self.id)+":"+self.name
+    

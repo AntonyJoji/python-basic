@@ -1,4 +1,24 @@
 {% extends "landingpage.html" %}
 {% block content %}
-   <h1>Product list </h1> 
+   <h1 >Product list </h1>
+   
+   <style>
+         h1 {
+            text-align: center;
+            color: #4b4bbd;
+         }
+         
+
+        
+   </style>
+   
+   {% for item in prods %}
+
+   <p>{{ item }} <a href="/details/{{ item.name }}">{{ item.name }}</a></p>
+   <p>Price: {{ item.price }}</p>
+   <!-- <p>Description: {{ item.desc }}</p>
+   <p>Features: {{ item.fea }}</p> -->
+   <br>
+   {% endfor %}
+   
 {% endblock %}
