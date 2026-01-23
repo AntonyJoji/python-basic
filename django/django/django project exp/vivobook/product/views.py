@@ -55,3 +55,16 @@ def products(req,key):
     datas ={'pro':db}
     response = page.render(datas, req)
     return HttpResponse(response)
+
+def addtocart(req):
+    proid=req.GET['proid']
+    qty=req.GET['qty']
+    data=req.COOKIES.get('pid')
+    if data:
+        data=data+','+proid+","+qty
+    else:
+        data=proid+","+qty
+    
+    response=render(req, 'cart.html', {'proid': proid, 'qty': qty})
+    response.set_cookie('pid', data)
+    return response

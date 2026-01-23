@@ -81,4 +81,16 @@
             </tr>
         </table>
     </div>
+
+   <form style="width: auto;
+   
+    margin: 20px auto;
+        padding: 20px;
+        max-width: 600px;"
+    action="/addtocart/">
+    {% csrf_token %}
+    <input type="hidden" name="proid" value="{{ pro.id }}">
+    Qty: <input type ="number" name="qty" min="0" max="5" >
+    <input type="submit" value="Add to Cart" >
+   </form>
 {% endblock %}
