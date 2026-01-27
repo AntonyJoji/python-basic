@@ -61,10 +61,25 @@ def addtocart(req):
     qty=req.GET['qty']
     data=req.COOKIES.get('pid')
     if data:
-        data=data+','+proid+","+qty
+        data=data+','+proid+":"+qty
     else:
-        data=proid+","+qty
+        data=proid+":"+qty
     
     response=render(req, 'cart.html', {'proid': proid, 'qty': qty})
     response.set_cookie('pid', data)
     return response
+
+def viewcart(req):
+    page = loader.get_template('shopingcart.html')
+    db=req.COOKIES.get('pid')
+    if db!=None:
+        items=db.split(',')
+        values={}
+        for i in items:
+            proid, qty = i.split(':')
+            values[proid]=qty
+        print(items)
+        response =page.render({'mycart':values},req)   
+    else:
+        response =page.render( {'Empty_cart':True},req)
+    return HttpResponse(response)

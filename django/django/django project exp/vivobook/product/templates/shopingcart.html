@@ -1,0 +1,19 @@
+{% extends "landingpage.html" %}
+{% block content %}
+    <h1>Your Shopping Cart</h1>
+   {% if Empty_cart %}
+    <div>
+        <h2>Your cart is empty.</h2>
+        <p> please Add <a href="/dbitem">continue Shopping</a></p>
+
+    </div>
+
+{% else %}
+     <h3>my cart</h3>
+     <ul>
+        {% for proid,qty in mycart.items %}
+        <li>Product ID: {{ proid }}, Quantity: {{ qty }}</li>
+        {% endfor %}
+     </ul>
+    {% endif %}
+{% endblock %}

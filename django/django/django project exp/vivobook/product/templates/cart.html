@@ -5,7 +5,10 @@
 <body>
     <h1>Add to Cart</h1>
     <p>This is the Add to Cart page.</p>
-    
-    <p>Product ID: {{ proid }}</p>
-    <p>Quantity: {{ qty }}</p>
+    <h2>Cart Items</h2>
+    {% for item in items %}
+        <p>Product: {{ item.product.name }}</p>
+        <p>Quantity: {{ item.quantity }}</p>
+        <hr>
+    {% endfor %}
 {% endblock %}

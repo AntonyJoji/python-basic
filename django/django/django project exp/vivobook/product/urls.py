@@ -7,4 +7,5 @@ urlpatterns = [
     path('dbitem/', dbitemdisp),
     path('details/<str:key>/', products),
     path('addtocart/', addtocart),
+    path('viewcart/', viewcart),
 ]
