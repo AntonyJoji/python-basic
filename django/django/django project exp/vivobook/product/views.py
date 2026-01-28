@@ -56,30 +56,68 @@ def products(req,key):
     response = page.render(datas, req)
     return HttpResponse(response)
 
-def addtocart(req):
-    proid=req.GET['proid']
-    qty=req.GET['qty']
-    data=req.COOKIES.get('pid')
-    if data:
-        data=data+','+proid+":"+qty
-    else:
-        data=proid+":"+qty
+# def addtocart(req):
+#     proid=req.GET['proid']
+#     qty=req.GET['qty']
+#     data=req.COOKIES.get('pid')
+#     if data:
+#         data=data+','+proid+":"+qty
+#     else:
+#         data=proid+":"+qty
     
-    response=render(req, 'cart.html', {'proid': proid, 'qty': qty})
-    response.set_cookie('pid', data)
-    return response
+#     response=render(req, 'cart.html', {'proid': proid, 'qty': qty})
+#     response.set_cookie('pid', data)
+#     return response
+
+# def viewcart(req):
+#     page = loader.get_template('shopingcart.html')
+#     db=req.COOKIES.get('pid')
+#     if db!=None:
+#         items=db.split(',')
+#         values={}
+#         for i in items:
+#             proid, qty = i.split(':')
+#             values[proid]=qty
+#         print(items)
+#         response =page.render({'mycart':values},req)   
+#     else:
+#         response =page.render( {'Empty_cart':True},req)
+#     return HttpResponse(response)
+
+
+def addtocart(req):
+    proid =req.GET['proid']
+    qty =req.GET['qty']
+    respone=render(req,'cart1.html')
+    cartitems= {}
+    if req.session.__contains__('cartdata'):
+        cartitems=req.session['cartdata']
+    cartitems[proid]=qty
+    req.session['cartdata']=cartitems
+    print(cartitems)
+    print(req.session.get('cartdata'))
+    return respone
+
 
 def viewcart(req):
-    page = loader.get_template('shopingcart.html')
-    db=req.COOKIES.get('pid')
-    if db!=None:
-        items=db.split(',')
-        values={}
-        for i in items:
-            proid, qty = i.split(':')
-            values[proid]=qty
-        print(items)
-        response =page.render({'mycart':values},req)   
+    page = loader.get_template('shopingcart1.html')
+    if req.session.__contains__('cartdata'):
+        for key in req.session.keys():
+            if key =='cartdata':
+               items=list(req.session[key].items())
+               itemsdb=[]
+               for i in items:
+                   proid, qty = i
+                   db=data.objects.get(id=proid)
+                   itemsdb.append({
+                                   'id':proid,
+                                   'name':db.name,
+                                   'price':db.price,
+                                   'qty':qty,
+                                   'desc':db.desc,
+                                   'fea':db.fea
+                                   })
+        response =page.render({'cart_products':itemsdb},req)   
     else:
         response =page.render( {'Empty_cart':True},req)
     return HttpResponse(response)

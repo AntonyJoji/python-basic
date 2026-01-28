@@ -1,0 +1,32 @@
+{% extends "landingpage.html" %}
+{% block content %}
+    <h1>Your Shopping Cart1</h1>
+   {% if Empty_cart %}
+    <div>
+        <h2>Your cart is empty.</h2>
+        <p> please Add <a href="/dbitem">continue Shopping</a></p>
+
+    </div>
+
+{% else %}
+     <h2>My Cart</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Feature</th>
+        </tr>
+
+        {% for item in cart_products %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.desc }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}
