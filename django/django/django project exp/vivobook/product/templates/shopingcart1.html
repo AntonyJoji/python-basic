@@ -17,6 +17,8 @@
             <th>Price</th>
             <th>Quantity</th>
             <th>Feature</th>
+            <th>Total</th>
+        
         </tr>
 
         {% for item in pros %}
@@ -25,8 +27,16 @@
             <td>{{ item.price }}</td>
             <td>{{ item.qty }}</td>
             <td>{{ item.desc }}</td>
+            <td>{{ item.total }}</td>
+            
         </tr>
+        
+
         {% endfor %}
     </table>
+    <h3>Cart Total: {{ cart_total }}</h3>
+     <form action="/clearcart">
+        <input type="submit" value="clear cart" formaction="/clearcart">
+     </form>
     {% endif %}
 {% endblock %}

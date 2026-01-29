@@ -115,9 +115,21 @@ def viewcart(req):
                                    'price':db.price,
                                    'qty':qty,
                                    'desc':db.desc,
-                                   'fea':db.fea
+                                   'fea':db.fea,
+                                   'total':db.price*int(qty),
                                    })
-        response =page.render({'pros':itemsdb},req)   
+                   cart_sum=[i['total'] for i in itemsdb]
+        response =page.render({'pros':itemsdb, 'cart_total':sum(cart_sum)},req)   
     else:
         response =page.render( {'Empty_cart':True},req)
     return HttpResponse(response)
+
+from django.shortcuts import redirect
+
+def clearcart(req):
+    if 'cartdata' in req.session:
+        del req.session['cartdata']
+        return redirect('/dbitem')
+    else:
+        return HttpResponse("No items in cart to clear.")
+
