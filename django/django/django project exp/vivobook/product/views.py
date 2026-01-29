@@ -117,7 +117,7 @@ def viewcart(req):
                                    'desc':db.desc,
                                    'fea':db.fea
                                    })
-        response =page.render({'cart_products':itemsdb},req)   
+        response =page.render({'pros':itemsdb},req)   
     else:
         response =page.render( {'Empty_cart':True},req)
     return HttpResponse(response)
