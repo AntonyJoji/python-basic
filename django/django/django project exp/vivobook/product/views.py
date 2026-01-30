@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from django import db
+from django.http import HttpResponse,JsonResponse
 from django.shortcuts import render
 from django.template import loader
 from .models import data
@@ -132,4 +133,41 @@ def clearcart(req):
         return redirect('/dbitem')
     else:
         return HttpResponse("No items in cart to clear.")
+    
 
+def getalldata(req):
+    ls=[]
+    db=data.objects.all()
+    for item in db:
+        ls.append({
+            'id':item.id,
+            'name':item.name,
+            'price':item.price,
+            'desc':item.desc,
+            'fea':item.fea
+        })
+    alldata={'new':ls}
+    return JsonResponse(alldata)
+
+
+
+def searchprod(req):
+  page=loader.get_template('search.html')
+  data={}
+  response=page.render(data, req)
+  return HttpResponse(response)
+    
+
+
+def getproduct(req, keyw):
+    ls=[]
+    for i in data.objects.filter(name__icontains=keyw):
+        ls.append({
+            'id':i.id,
+            'name':i.name,
+            'price':i.price,
+            'desc':i.desc,
+            'fea':i.fea
+        })
+    alldata={'produ':ls}
+    return JsonResponse(alldata)

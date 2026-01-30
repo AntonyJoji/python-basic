@@ -8,5 +8,9 @@ urlpatterns = [
     path('details/<str:key>/', products),
     path('addtocart/', addtocart),
     path('viewcart/', viewcart),
-    path('clearcart/', clearcart)
+    path('clearcart/', clearcart),
+    path('jdata/', getalldata),
+    path('searchpro/', searchprod),
+    path("getproduct/<str:keyw>/", getproduct)
+
 ]
