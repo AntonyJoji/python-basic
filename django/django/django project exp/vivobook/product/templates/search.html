@@ -2,34 +2,90 @@
 {% block content %}
 
 <h1>Search Products</h1>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    function getprodata(){
-        var xhttp=new XMLHttpRequest()
-        xhttp.open("GET","/getproduct/"+document.getElementById("Enter product name").value,true)
-        xhttp.onreadystatechange=function(){
-            if(this.readyState==4 && this.status==200){
-                var datas=JSON.parse(this.responseText)
+    function getprodata() {
+        var xhttp = new XMLHttpRequest()
+        xhttp.open("GET", "/getproduct/" + document.getElementById("Enter product name").value, true)
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var datas = JSON.parse(this.responseText)
                 console.log(datas.produ)
-                str ='<table>'
-                    for (x of datas.produ){
-                        str =str+'<tr>'
-                        str=str+'<td>'+x.name+'</td>'
-                    }
-                str=str+'</table>'
-                document.getElementById("data").innerHTML=str
+                str = '<table>'
+                for (x of datas.produ) {
+                    str = str + '<tr>'
+                    str = str + '<td>' + x.name + '</td>'
+                }
+                str = str + '</table>'
+                document.getElementById("data").innerHTML = str
             }
         };
         xhttp.send();
-    } 
+    }
 
 
+    function drawalldata() {
+        var xhttp = new XMLHttpRequest()
+        xhttp.open("GET", "/jdata/", true)
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var datax = JSON.parse(this.responseText)
+                console.log(datax.new)
+                drawdata(datax)
+            }
+        };
+        xhttp.send();
+    }
+
+    function drawdata(datax) {
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: getlabels(datax),
+                datasets: [{
+                    label: '# of Votes',
+                    data: getvalues(datax),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    }
+
+    function getlabels(datax) {
+        let labels = []
+        for (x of datax.new) {
+            labels.push(x.name)
+        }
+        return labels
+    }
+     function getvalues(datax) {
+        let values = []
+        for (x of datax.new) {
+            values.push(x.price)
+        }
+        return values
+    }
 </script>
 <form action=""><input type="text" name="keyword" id="Enter product name">
     <input type="button" value="Search" onclick="getprodata()">
+    <input type="button" value="draw" onclick="drawalldata()">
 </form>
 <div>
     <h2>Search Results:</h2>
     <div id="data"></div>
+</div>
+<div>
+    <canvas id="myChart"></canvas>
 </div>
 
 {% endblock %}
