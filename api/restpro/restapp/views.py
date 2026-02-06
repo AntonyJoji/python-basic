@@ -19,3 +19,23 @@ class userprofile(APIView):
             return Response(newdata.data)
         else:
             return Response("data is not valid")
+    
+
+
+class profile(APIView):
+    def get(self,req,key):
+        profile = user.objects.get(id=key)
+        newdata = userserializer(profile)
+        return Response(newdata.data)
+    def put(self,req,key):
+        profile = user.objects.get(id=key)
+        newdata = userserializer(profile,req.data)
+        if newdata.is_valid():
+            newdata.save()
+            return Response(newdata.data)
+        else:
+            return Response("data is not valid")
+    def delete(self,req,key):
+        profile = user.objects.get(id=key)
+        profile.delete()
+        return Response("data is deleted")
