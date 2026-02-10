@@ -19,7 +19,9 @@ def extract_structured(text):
 
     emails=sorted(set(re.findall(r'[\w\.-]+@[\w\.-]+\.\w+',joined)))
     print("Found emails:", emails)
-    phones=sorted(set(re.findall(r'(?:\+?\d{1,3}[\s\-]?)?\(?\d+\)?[\d\s\-]{5,}',joined)))
+    phones=sorted(set(re.findall(r'(?:\+?\d{1,3}[\s\-]?)?\(?\d+\)?[\d\s\-]{10,}',joined)))
+    for i in range(len(phones)):
+        phones[i]=re.sub(r'[\s\-]+','',phones[i])   
     print("Found phones:", phones)
 
     return {
