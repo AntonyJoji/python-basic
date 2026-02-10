@@ -19,14 +19,39 @@ def extract_structured(text):
 
     emails=sorted(set(re.findall(r'[\w\.-]+@[\w\.-]+\.\w+',joined)))
     print("Found emails:", emails)
+    
     phones=sorted(set(re.findall(r'(?:\+?\d{1,3}[\s\-]?)?\(?\d+\)?[\d\s\-]{10,}',joined)))
     for i in range(len(phones)):
         phones[i]=re.sub(r'[\s\-]+','',phones[i])   
     print("Found phones:", phones)
 
+    address_keywords=['ACT Chamber','MKK','Rd','palarivattom','Ernakulam','Kerala','P.O','PO','Floor']
+    address =[]
+    for ln in lines:
+        if any(kw.lower() in ln.lower() for kw in address_keywords):
+            address.append(ln)
+        print("Found addresses:", address)
+    
+
+    # if not address:
+    #     for i ,ln in enumerate(lines):
+    #         if 'contact us' in ln.lower() or 'address' in ln.lower():
+    #             snippet = "\n".join(lines[i:i+5])
+    #             address.append(snippet)
+                
+    hours =[ln for ln in lines if re.search(r'\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b',ln,re.IGNORECASE) ]  
+    print("Found hours:", hours)
+
+    response_time =[ln for ln in lines if 'response' in ln.lower()or 'reply' in ln.lower()]
+    print("Found response time info:", response_time)  
+    
+
     return {
         "emails":emails,
-        "phones":phones
+        "phones":phones,
+        "address":address,
+        "hours":hours,
+        "response_time":response_time
     }
 
 
@@ -42,7 +67,21 @@ def write_output(data,filename="data.txt"):
         f.write("\nPhones:\n")
         for p in data["phones"]:
            f.write(f"--{p}\n")  
+        
+        f.write("\n----------------------------\n")
+        f.write("\nAddresses:\n")
+        for a in data["address"]:
+           f.write(f"--{a}\n")
 
+        f.write("\n----------------------------\n")
+        f.write("\nHours:\n")
+        for h in data["hours"]:
+           f.write(f"--{h}\n")
+
+        f.write("\n----------------------------\n")
+        f.write("\nResponse Time Info:\n")  
+        for r in data["response_time"]:
+           f.write(f"--{r}\n")
    
 
 
